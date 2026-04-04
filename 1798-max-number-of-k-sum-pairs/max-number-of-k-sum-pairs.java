@@ -4,13 +4,14 @@ class Solution {
         int c=0,i=0,j=nums.length-1;
         Arrays.sort(nums);
         while(i<j){
-            if(nums[i]+nums[j]==k){
+            int s=nums[i]+nums[j];
+            if(s==k){
                 c++;
                 i++;
                 j--;
                 }
 
-            else if(nums[i]+nums[j]<k)i++;
+            else if(s<k)i++;
             else j--;
         }
             return c;
