@@ -2,13 +2,14 @@ import java.util.*;
 class Solution {
     public void moveZeroes(int[] nums) {
         
-        int k=0;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]!=0)nums[k++]=nums[i];
+       int left=0;
+       for(int r=0;r<nums.length;r++){
+        if(nums[r]!=0){
+            int t=nums[r];
+            nums[r]=nums[left];
+            nums[left]=t;
+            left++;
         }
-      for(int i=k;i<nums.length;i++){
-            nums[i]=0;
-        }
-       System.out.println(Arrays.toString(nums));
+       }
     }
 }
