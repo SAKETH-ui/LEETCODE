@@ -1,11 +1,10 @@
 class Solution {
     public int fib(int n) {
-        int a=-1,b=1,c=0;
-        for(int i=0;i<=n;i++){
-            c=a+b;
-            a=b;
-            b=c;
-        }
-        return c;
+        int l,sl;
+        if(n<=1)return n;
+        l=fib(n-1);
+        sl=fib(n-2);
+        return l+sl;
     }
+
 }
