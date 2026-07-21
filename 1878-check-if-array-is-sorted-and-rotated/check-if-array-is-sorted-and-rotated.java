@@ -1,16 +1,15 @@
 class Solution {
     public boolean check(int[] nums) {
         int n=nums.length;
+        int c=0;
         for(int i=0;i<nums.length;i++){
             // rotate(nums,i);
-            int []r=new int[n];
-            for(int j=0;j<n;j++){
-                r[j]=nums[(i+j)%n];
-            }
-            if(isSorted(r))return true;
+            // if(isSorted(nums))return true;
             // rotate(nums,n-i);
+            if(nums[i]>nums[(i+1)%n])c++;
         }
-        return false;
+        // return false;
+        return c<=1;
     }
     // void swap(int []a,int i,int j){
     //     int t=a[i];
@@ -20,13 +19,13 @@ class Solution {
     // void rotate(int []a,int k){
     //     int n=a.length;
     //         for(int j=0;j<k/2;j++)swap(a,j,k-j-1);
-    //         for(int j=k;j<k+(n-k)/2;j++)swap(a,j,n-j+k-1);
+    //         for(int j=k;j<k+(n-k)/2;j++)swap(a,j,n-j-1);
     //         for(int j=0;j<n/2;j++)swap(a,j,n-j-1);
     // }
-    boolean isSorted(int []a){
-        for(int i=1;i<a.length;i++){
-            if(a[i]<a[i-1])return false;
-        }
-        return true;
-    }
+    // boolean isSorted(int []a){
+    //     for(int i=1;i<a.length;i++){
+    //         if(a[i]<a[i-1])return false;
+    //     }
+    //     return true;
+    // }
 }
