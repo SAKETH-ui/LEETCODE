@@ -4,7 +4,7 @@ class Solution {
         int cs=0,m=a[0];
         for(int i=0;i<a.length;i++){
             cs+=a[i];
-            if(cs>m)m=cs;
+            m=Math.max(cs,m);
             if(cs<0){
                 cs=0;
             }
