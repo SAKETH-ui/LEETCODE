@@ -1,24 +1,21 @@
 import java.util.*;
-
 class Solution {
     public int longestConsecutive(int[] nums) {
-        int n = nums.length;
-        if (n == 0) return 0; 
-        Arrays.sort(nums); 
-        int lastSmaller = Integer.MIN_VALUE; 
-        int cnt = 0; 
-        int longest = 1; 
-        for (int i = 0; i < n; i++) {
-            if (nums[i] - 1 == lastSmaller) {
-                cnt += 1; 
-                lastSmaller = nums[i]; 
-            } 
-            else if (nums[i] != lastSmaller) {
-                cnt = 1; 
-                lastSmaller = nums[i]; 
-            }
-            longest = Math.max(longest, cnt); 
+        if(nums.length==0)return 0;
+        Arrays.sort(nums);
+       int l=1,x=Integer.MIN_VALUE;
+        int c=0;
+       for(int i=0;i<nums.length;i++){
+        if(nums[i]-1==x){
+            c++;
+            x=nums[i];
         }
-        return longest;
+        else if(nums[i]!=x){
+            c=1;
+            x=nums[i];
+        }
+        l=Math.max(l,c);
+       }
+       return l;
     }
 }
