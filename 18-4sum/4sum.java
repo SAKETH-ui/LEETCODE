@@ -12,11 +12,11 @@ class Solution {
                 long sum=(long)nums[i]+nums[j]+nums[k]+nums[l];
                     if(sum==t){
                         ans.add(Arrays.asList(nums[i],nums[j],nums[k],nums[l]));
+                        
+                        while(k<l&&nums[k]==nums[k+1])k++;
+                        while(k<l&&nums[l]==nums[l-1])l--;
                         k++;
                         l--;
-                        
-                        while(k<l&&nums[k]==nums[k-1])k++;
-                        while(k<l&&nums[l]==nums[l+1])l--;
                     }
                     else if(sum>t)l--;
                     else k++;
