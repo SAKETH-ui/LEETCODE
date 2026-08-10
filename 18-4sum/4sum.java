@@ -10,7 +10,9 @@ class Solution {
                 int k=j+1,l=nums.length-1;
                 while(k<l){
                 long sum=(long)nums[i]+nums[j]+nums[k]+nums[l];
-                    if(sum==t){
+                    if(sum>t)l--;
+                    else if(sum<t)k++;
+                    else if(sum==t){
                         ans.add(Arrays.asList(nums[i],nums[j],nums[k],nums[l]));
                         
                         while(k<l&&nums[k]==nums[k+1])k++;
@@ -18,8 +20,6 @@ class Solution {
                         k++;
                         l--;
                     }
-                    else if(sum>t)l--;
-                    else k++;
                 }
             }
         }
