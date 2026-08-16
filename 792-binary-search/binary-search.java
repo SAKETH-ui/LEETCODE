@@ -1,13 +1,19 @@
 class Solution {
     public int search(int[] nums, int t) {
-        int n=nums.length;
-        int l=0,r=n-1;
-        while(l<=r){
-            int m=(l+r)/2;
-            if(nums[m]<t)l=m+1;
-            else if(nums[m]>t)r=m-1;
-            else return m;
+        return BS(nums,0,nums.length-1,t);
+    }
+    public int BS(int []a,int l,int h,int t){
+        if(l>h)return -1;
+        int m=l+(h-l)/2;
+        
+        if(t>a[m]){
+            return BS(a,m+1,h,t);
         }
-        return -1;
+        else if(t<a[m]){
+            return BS(a,l,m-1,t);
+        }
+        else{
+             return m;
+        }
     }
 }
