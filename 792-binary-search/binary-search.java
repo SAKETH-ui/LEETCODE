@@ -4,7 +4,7 @@ class Solution {
     }
     public int BS(int []a,int l,int h,int t){
         if(l>h)return -1;
-        int m=l+(h-l)/2;
+        int m=(l+h)/2;
         
         if(t>a[m]){
             return BS(a,m+1,h,t);
