@@ -9,7 +9,7 @@ class Solution {
             int mid=low+(high-low)/2;
             int sum=0;
             for(int i=0;i<nums.length;i++){
-                sum+=Math.ceil((double)nums[i]/mid);
+                sum+=(nums[i]+mid-1)/mid;
             }
             if(sum<=t){
                 ans=mid;
