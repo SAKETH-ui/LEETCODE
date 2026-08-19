@@ -3,8 +3,8 @@ class Solution {
         if((long)m*k>nums.length)return -1;
         int max=nums[0],min=nums[0];
         for(int i=0;i<nums.length;i++){
-            max=Math.max(max,nums[i]);
-            min=Math.min(min,nums[i]);
+            if(nums[i]>max)max=nums[i];
+            if(nums[i]<min)min=nums[i];
         }
         int ans=max;
         while(min<=max){
