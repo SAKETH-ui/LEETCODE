@@ -9,20 +9,9 @@ class Solution {
         int ans=max;
         while(min<=max){
             int mid=min+(max-min)/2;
-            if(possible(nums,mid,m,k)){
-                ans=mid;
-                max=mid-1;
-            }
-            else {
-                min=mid+1;
-            }
-        }
-        return ans;
-    }
-    static boolean possible(int []a,int d,int m,int k){
-        int c=0,b=0;
-        for(int i=0;i<a.length;i++){
-            if(a[i]<=d){
+             int c=0,b=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]<=mid){
                 c++;
             }
             else {
@@ -31,7 +20,16 @@ class Solution {
             }
         }
         b+=c/k;
-        if(b>=m)return true;
-        else return false;
+        if(b>=m){
+                ans=mid;
+                max=mid-1;
+            }
+        else{
+                min=mid+1;
+            }
     }
-}
+           return ans; 
+        }
+        
+    }
+    
