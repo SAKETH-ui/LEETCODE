@@ -9,20 +9,20 @@ class Solution {
         while(low<=high){
             int mid=low+(high-low)/2;
             int dayss=1,w=0;
-        for(int i=0;i<nums.length;i++){
+        for(int x:nums){
             
-            if(w+nums[i]>mid){
+            if(w+x>mid){
                 dayss+=1;
                 w=0;
-                w+=nums[i];
+                w=x;
             }
-            else w+=nums[i];
+            else w+=x;
         }
             if(dayss<=d){
                 ans=mid;
                 high=mid-1;
             }
-            else if(dayss>d)low=mid+1;
+            else low=mid+1;
         }
         return ans;
     }
