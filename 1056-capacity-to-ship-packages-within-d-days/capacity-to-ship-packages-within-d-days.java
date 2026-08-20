@@ -13,7 +13,6 @@ class Solution {
             
             if(w+x>mid){
                 dayss+=1;
-                w=0;
                 w=x;
             }
             else w+=x;
