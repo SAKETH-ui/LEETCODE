@@ -4,16 +4,16 @@ class Solution {
         int level=0;
         for(char ch:s.toCharArray()){
             if(ch=='('){
-                if(level>0){
+                level++;
+                if(level>1){
                     res+="(";
                 }
-                level++;
             }
-            else{
-                level--;
-                if(level>0){
+            else if(ch==')'){
+                if(level>1){
                     res+=")";
                 }
+                level--;
             }
         }
         return res;
